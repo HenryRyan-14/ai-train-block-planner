@@ -1,0 +1,11 @@
+maintenance_id,train_id,maintenance_type,start_time,end_time,priority,mandatory,predicted_risk
+M08,T08,Heavy Maintenance,2026-09-10 00:00,2026-09-10 23:59,High,Yes,1
+M04,T04,Inspection,2026-09-10 08:00,2026-09-10 10:00,Low,No,0
+M01,T01,Inspection,2026-09-10 09:00,2026-09-10 11:00,Medium,Yes,1
+M09,T09,Routine Service,2026-09-10 10:00,2026-09-10 12:00,Low,No,1
+M06,T06,Brake Check,2026-09-10 11:00,2026-09-10 14:00,High,Yes,1
+M02,T02,Brake Check,2026-09-10 12:00,2026-09-10 15:00,High,Yes,1
+M03,T03,Routine Service,2026-09-10 13:00,2026-09-10 16:00,Medium,Yes,1
+M07,T07,Inspection,2026-09-10 15:00,2026-09-10 17:00,Medium,Yes,0
+M05,T05,Engine Check,2026-09-10 16:00,2026-09-10 19:00,High,Yes,1
+M10,T10,Engine Check,2026-09-10 17:00,2026-09-10 20:00,High,Yes,1

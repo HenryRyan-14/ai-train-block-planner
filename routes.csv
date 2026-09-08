@@ -1,0 +1,6 @@
+route_id,origin,destination,distance_km,travel_time_hours
+R01,Bangalore,Mysore,145,2.5
+R02,Bangalore,Chennai,350,5.0
+R03,Bangalore,Hyderabad,570,8.0
+R04,Mysore,Bangalore,145,2.5
+R05,Chennai,Bangalore,350,5.0

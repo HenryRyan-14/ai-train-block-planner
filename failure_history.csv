@@ -1,0 +1,21 @@
+record_id,train_id,failure_date,failure_type,severity,downtime_hours
+F01,T01,2026-02-10,Brake Issue,Medium,6
+F02,T01,2026-06-15,Door Fault,Minor,2
+F03,T02,2026-01-20,Engine Issue,Major,18
+F04,T02,2026-05-12,Brake Issue,Medium,8
+F05,T03,2026-03-05,Electrical Fault,Minor,3
+F06,T03,2026-07-11,Door Fault,Minor,2
+F07,T04,2026-04-18,Brake Issue,Minor,3
+F08,T05,2026-02-25,Engine Issue,Major,16
+F09,T05,2026-06-03,Electrical Fault,Medium,7
+F10,T06,2026-01-08,Engine Issue,Major,20
+F11,T06,2026-03-22,Brake Issue,Major,12
+F12,T06,2026-07-19,Door Fault,Medium,5
+F13,T07,2026-05-20,Electrical Fault,Minor,2
+F14,T08,2026-01-15,Engine Issue,Major,24
+F15,T08,2026-04-10,Brake Issue,Major,15
+F16,T09,2026-02-14,Door Fault,Minor,2
+F17,T09,2026-06-28,Electrical Fault,Minor,3
+F18,T10,2026-01-30,Engine Issue,Major,18
+F19,T10,2026-05-05,Brake Issue,Medium,7
+F20,T10,2026-07-25,Electrical Fault,Medium,6

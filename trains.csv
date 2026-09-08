@@ -1,0 +1,11 @@
+train_id,train_type,age_years,total_km,current_location,status,capacity
+T01,Express,4,280000,Bangalore,Available,900
+T02,Express,8,520000,Mysore,Available,850
+T03,Intercity,5,340000,Bangalore,Available,700
+T04,Express,3,190000,Chennai,Available,1000
+T05,Intercity,7,460000,Bangalore,Available,750
+T06,Express,10,680000,Mysore,Available,850
+T07,Intercity,2,120000,Bangalore,Available,700
+T08,Express,6,390000,Chennai,Maintenance,900
+T09,Intercity,4,250000,Bangalore,Available,750
+T10,Express,9,590000,Bangalore,Available,950
