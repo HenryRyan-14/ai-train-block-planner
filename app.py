@@ -294,9 +294,4 @@ st.info(
     "service priority and prototype risk."
 )
 
-st.divider()
 
-st.success(
-    "✅ AI planning completed successfully. "
-    "The generated plan satisfies the current prototype constraints."
-)
