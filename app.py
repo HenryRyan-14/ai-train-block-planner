@@ -172,11 +172,7 @@ if len(assigned_services) > 0:
             f"{selected_row['predicted_risk']}"
         )
 
-    st.success(
-        "✓ The optimizer selected this train because it "
-        "satisfies the current prototype scheduling constraints "
-        "and is part of the optimized solution."
-    )
+   
 
 # ---------------------------------------------------------
 # MAINTENANCE / BLOCK PLAN
