@@ -296,10 +296,5 @@ st.dataframe(
     hide_index=True
 )
 
-st.info(
-    "The AI-optimized plan maintains service coverage while "
-    "considering train eligibility, maintenance conflicts, "
-    "service priority and prototype risk."
-)
 
 
