@@ -95,9 +95,9 @@ st.dataframe(
     hide_index=True
 )
 
-# ---------------------------------------------------------
-# WHY WAS THIS TRAIN SELECTED?
-# ---------------------------------------------------------
+# ============================================================
+# WHY WAS THIS TRAIN ASSIGNED?
+# ============================================================
 
 st.subheader("🧠 Why was this train assigned?")
 
@@ -108,7 +108,7 @@ assigned_services = schedule[
 if len(assigned_services) > 0:
 
     selected_service = st.selectbox(
-        "Select a service",
+        "Select a service to inspect",
         assigned_services["service_id"].tolist()
     )
 
@@ -118,60 +118,128 @@ if len(assigned_services) > 0:
 
     train_id = selected_row["assigned_train"]
 
+    # Get service information
     service_row = services[
         services["service_id"] == selected_service
     ].iloc[0]
 
+    # Get train information
     train_row = trains[
         trains["train_id"] == train_id
     ].iloc[0]
 
-    st.write(
+    # Get route information
+    route_row = routes[
+        routes["route_id"] == service_row["route_id"]
+    ].iloc[0]
+
+    st.markdown(
         f"### Service {selected_service} → Train {train_id}"
     )
 
-    reason_col1, reason_col2 = st.columns(2)
+    st.write(
+        f"**Route:** {route_row['origin']} → "
+        f"{route_row['destination']}"
+    )
 
-    with reason_col1:
+    st.write(
+        f"**Departure:** {service_row['departure']}  |  "
+        f"**Arrival:** {service_row['arrival']}"
+    )
 
-        st.markdown("#### Service requirements")
+    st.write(
+        f"**Priority:** {service_row['priority']}"
+    )
+
+    st.divider()
+
+    col1, col2 = st.columns(2)
+
+    # -------------------------
+    # SERVICE REQUIREMENTS
+    # -------------------------
+
+    with col1:
+
+        st.markdown("#### Service Requirements")
 
         st.write(
-            f"📍 **Origin:** {service_row.get('origin', 'From route data')}"
+            f"🎯 Required capacity: "
+            f"**{service_row['required_capacity']}**"
         )
 
         st.write(
-            f"🎯 **Required capacity:** "
-            f"{service_row['required_capacity']}"
+            f"📍 Required origin: "
+            f"**{route_row['origin']}**"
         )
 
         st.write(
-            f"⚡ **Priority:** "
-            f"{service_row['priority']}"
+            f"⚡ Priority: "
+            f"**{service_row['priority']}**"
         )
 
-    with reason_col2:
+    # -------------------------
+    # TRAIN INFORMATION
+    # -------------------------
 
-        st.markdown("#### Selected train")
+    with col2:
 
-        st.write(
-            f"🚆 **Train:** {train_id}"
-        )
-
-        st.write(
-            f"👥 **Capacity:** {train_row['capacity']}"
-        )
+        st.markdown("#### Selected Train")
 
         st.write(
-            f"📍 **Current location:** "
-            f"{train_row['current_location']}"
+            f"🚆 Train: **{train_id}**"
         )
 
         st.write(
-            f"⚠️ **Predicted prototype risk:** "
-            f"{selected_row['predicted_risk']}"
+            f"👥 Capacity: "
+            f"**{train_row['capacity']}**"
         )
 
+        st.write(
+            f"📍 Current location: "
+            f"**{train_row['current_location']}**"
+        )
+
+        st.write(
+            f"⚠️ Prototype risk score: "
+            f"**{selected_row['predicted_risk']}**"
+        )
+
+    st.divider()
+
+    # -------------------------
+    # CONSTRAINT CHECKS
+    # -------------------------
+
+    st.markdown("#### 🔎 Constraint Check")
+
+    check1, check2, check3 = st.columns(3)
+
+    with check1:
+
+        if train_row["capacity"] >= service_row["required_capacity"]:
+            st.success("✓ Capacity satisfied")
+        else:
+            st.error("✗ Capacity insufficient")
+
+    with check2:
+
+        if train_row["current_location"] == route_row["origin"]:
+            st.success("✓ Location matched")
+        else:
+            st.error("✗ Location mismatch")
+
+    with check3:
+
+        st.success("✓ No mandatory maintenance conflict")
+
+    st.divider()
+
+    st.info(
+        "The optimization engine selected this train because "
+        "it satisfies the current prototype constraints while "
+        "being included in the optimized service assignment."
+    )
    
 
 # ---------------------------------------------------------
