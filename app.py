@@ -137,8 +137,8 @@ if len(assigned_services) > 0:
         st.markdown("#### Service requirements")
 
         st.write(
-            f"📍 **Origin:** {service_row.get('origin', 'From route data')}"
-        )
+    f"📍 **Route:** {service_row['route_id']}"
+)
 
         st.write(
             f"🎯 **Required capacity:** "
