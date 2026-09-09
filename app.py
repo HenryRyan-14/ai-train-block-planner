@@ -183,11 +183,7 @@ st.write(
     f"score of **{selected_row['predicted_risk']}**."
 )
 
-st.info(
-    "The optimizer evaluates eligible train-service combinations "
-    "while respecting capacity, location, maintenance and "
-    "non-overlapping service constraints."
-) 
+
   
 
 # ---------------------------------------------------------
