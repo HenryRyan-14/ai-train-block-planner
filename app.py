@@ -269,10 +269,7 @@ st.dataframe(
     hide_index=True
 )
 
-# ---------------------------------------------------------
 # BEFORE VS AFTER
-# ---------------------------------------------------------
-
 st.subheader("🔄 Planning Improvement")
 
 comparison = pd.DataFrame({
@@ -281,6 +278,12 @@ comparison = pd.DataFrame({
         "Service coverage",
         "Trains used",
         "Aggregate prototype risk"
+    ],
+    "Baseline": [
+        "15/15",
+        "100.0%",
+        7,
+        12
     ],
     "AI Optimized": [
         f"{served_services}/{total_services}",
@@ -295,6 +298,5 @@ st.dataframe(
     use_container_width=True,
     hide_index=True
 )
-
 
 
