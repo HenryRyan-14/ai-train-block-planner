@@ -171,7 +171,23 @@ if len(assigned_services) > 0:
             f"⚠️ **Predicted prototype risk:** "
             f"{selected_row['predicted_risk']}"
         )
- 
+st.divider()
+
+st.markdown("#### 🤖 AI Decision Summary")
+
+st.write(
+    f"Train **{train_id}** was selected for service **{selected_service}** "
+    f"because it meets the required capacity of "
+    f"**{service_row['required_capacity']}**, is currently located at "
+    f"**{train_row['current_location']}**, and has a prototype risk "
+    f"score of **{selected_row['predicted_risk']}**."
+)
+
+st.info(
+    "The optimizer evaluates eligible train-service combinations "
+    "while respecting capacity, location, maintenance and "
+    "non-overlapping service constraints."
+) 
   
 
 # ---------------------------------------------------------
